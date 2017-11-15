@@ -23,10 +23,27 @@ class deck:
                 self.deck.append(self.card)
         shuffle(self.deck)
         
+    def dealCard(self):
+        return self.deck.pop()
+        
+        
 
-    def dealHand(self):
-        return none
+class player:
+    def __init__(self):
+        self.hand = []
 
-'''class player:
-    return none '''
-    
+    def receiveCard(self, card):
+        self.hand.append(card)
+        
+    def printHand(self):
+        return self.hand
+        
+testgame = game(1)
+testdeck = deck()
+testplayer = player()
+
+testdeck.createDeck()
+for i in range(5):
+    testplayer.receiveCard(testdeck.dealCard())
+print testplayer.printHand()
+
